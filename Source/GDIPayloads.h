@@ -9,17 +9,17 @@ int w = GetSystemMetrics(0);
 int h = GetSystemMetrics(1);
 
 //Shake & Warp Pre-Config
-int shakeIntensity = 1;
-int warpIntensity = 3;
+int shakeIntensity = 3;
+int warpIntensity = 8;
 
 //Wave Pre-Config
-int waveDelay = rand() % 30;
+int waveDelay = rand() % 12;
 
 //Random Thing Pre-Config
 bool random = true;
 
 //Random colors Pre-Config
-int colorsdelay = 50;
+int colorsdelay = 60;
 
 /*
 	Every payload below wasn't organized
@@ -112,7 +112,7 @@ namespace GDIPayloads
 				{
 					int index = y * ws + x;
 
-					int i = rand() % 10;
+					int i = rand() % 18;
 
 					rgbquad[index].rgbRed   += i;
 					rgbquad[index].rgbGreen += i;
@@ -122,7 +122,7 @@ namespace GDIPayloads
 
 			StretchBlt(dc, 0, 0, w, h, dcCopy, 0, 0, ws, hs, SRCPAINT | PATINVERT);
 
-			Sleep(rand() % 10);
+			Sleep(rand() % 20);
 			System::RedrawScreen();
 		}
 
@@ -185,7 +185,7 @@ namespace GDIPayloads
 				}
 			}
 
-			i++; angle += 0.01f;
+			i++; angle += 0.06f;
 
 			StretchBlt(dc, 0, 0, w, h, dcCopy, 0, 0, ws, hs, SRCCOPY);
 
@@ -433,17 +433,34 @@ namespace GDIPayloads
 			{
 				LPCSTR lpStrings[] =
 				{
-					"Do pills work?", "I don't want live anymore", "Waiting for my end",
-					"Everyday is a infinite loop", "My thoughts are killing me", "Kill me",
-					"Dissociating", "Fleeing reality", "Am I Real?", "I'am not safe",
-					"HELP ME", "cold.", "Transcending", "Anxiety", "Hear the voices",
-					"Trapped by illusion", "Full of emptiness", "Dreaming forever",
-					"Questioning my existence", "Losing control regressively", "pain",
-					"Don't want to suffer anymore", "Panic attacks", "Dark forever",
-					"Faking my happiness", "Seeking eternal peace", "Can't breathe", "sad",
-					"Existential Crisis", "Viewing shadows", "Beyond the stars", "Alone",
-					"Can't kill myself", "What am I", "Made with rotten flesh", "Isolated",
-					"Wearing masks", "My final destination", "Hurting myself", "Farewell"
+"Do pills work?", "I don't want live anymore", "Waiting for my end",
+"Everyday is a infinite loop", "My thoughts are killing me", "Kill me",
+"Dissociating", "Fleeing reality", "Am I Real?", "I'am not safe",
+"HELP ME", "cold.", "Transcending", "Anxiety", "Hear the voices",
+"Trapped by illusion", "Full of emptiness", "Dreaming forever",
+"Questioning my existence", "Losing control regressively", "pain",
+"Don't want to suffer anymore", "Panic attacks", "Dark forever",
+"Faking my happiness", "Seeking eternal peace", "Can't breathe", "sad",
+"Existential Crisis", "Viewing shadows", "Beyond the stars", "Alone",
+"Can't kill myself", "What am I", "Made with rotten flesh", "Isolated",
+"Wearing masks", "My final destination", "Hurting myself", "Farewell",
+"Lost in the static", "The walls are breathing", "Time won't move",
+"I forgot who I was", "The mirror lies", "Something is watching",
+"I can't wake up", "This place isn't real", "My name feels wrong",
+"Why is it so quiet?", "I hear footsteps behind me", "The lights flicker",
+"Everything repeats", "I am stuck here", "No one remembers me",
+"My shadow moved", "The clock stopped", "I'm fading away",
+"They replaced me", "I feel hollow", "Where did everyone go?",
+"The door won't open", "I see them in the dark", "It's getting closer",
+"I shouldn't be here", "This isn't my body", "I feel disconnected",
+"The silence is loud", "Reality is cracking", "I'm losing time",
+"I keep forgetting", "Something is inside the walls", "Don't look back",
+"The air feels heavy", "I can't feel anything", "Why am I still here?",
+"I hear whispers", "They're calling my name", "I can't escape",
+"The room is shrinking", "I feel watched", "Nothing feels real",
+"I think I'm already gone", "The end is near", "Everything is wrong",
+"I want to wake up", "Please make it stop", "It's never-ending",
+"I'm trapped in my head", "The darkness is warm", "I see shapes moving"
 				};
 
 				//Setup the angle
@@ -647,7 +664,7 @@ namespace GDIPayloads
 					          vtx[edges[i].vtx1].x + cx, vtx[edges[i].vtx1].y + cy, 20);
 			}
 
-			Sleep(40);
+			Sleep(20);
 			if (rand() % 5 == 0) System::RedrawScreen();
 
 			//Moves the tesseract around
@@ -722,7 +739,7 @@ namespace GDIPayloads
 					int cx = x - randx;
 					int cy = y - randy;
 
-					//(x²/a²) + (y²+b²) = 1
+					//(xÂ²/aÂ²) + (yÂ²+bÂ²) = 1
 					int zx = (cx * cx) / (a * a);
 					int zy = (cy * cy) / (b * b);
 
@@ -964,7 +981,7 @@ namespace GDIPayloads
 
 			if (rand() % 10 == 0)
 			{
-				Sleep(5);
+				Sleep(8);
 
 				System::RedrawScreen();
 			}
@@ -1251,7 +1268,7 @@ namespace GDIPayloads
 
 				DeleteObject(hbrush);
 
-				Sleep(25);
+				Sleep(15);
 			}
 		}
 
