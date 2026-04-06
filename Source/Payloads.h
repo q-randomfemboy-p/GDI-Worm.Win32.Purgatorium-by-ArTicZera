@@ -77,13 +77,13 @@ namespace Payloads
 		}
 	}
 
-	//Show a message each 10 minutes
+	//Show a message each 2 minutes
 	DWORD WINAPI TimedMessages(LPVOID lpvd)
 	{
 		while (true)
 		{
-			//10 minutes
-			Sleep(1000 * 600);
+			//2 minutes
+			Sleep(1000 * 120);
 
 			MessageBoxW(NULL, L"THE END IS NEAR!!!", L"THE END IS NEAR!!!", MB_OK | MB_ICONEXCLAMATION);
 		}
